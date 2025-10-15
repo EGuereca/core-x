@@ -1,0 +1,98 @@
+---
+// Header component for Core X
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-sm border-b shadow-sm" style="border-color: #DDE3EA;">
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="flex items-center space-x-2 group">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-all duration-200" style="background: linear-gradient(135deg, #003366 0%, #0A0A0A 100%);">
+            <span class="font-bold text-xl" style="color: #FFFFFF;">CX</span>
+          </div>
+          <span class="text-2xl font-bold" style="background: linear-gradient(90deg, #003366 0%, #0A0A0A 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">
+            Core X
+          </span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+<a href="#servicios" class="font-medium transition-colors duration-200" style="color: #0A0A0A;" onmouseover="this.style.color='#003366'" onmouseout="this.style.color='#0A0A0A'">
+          Servicios
+        </a>
+<a href="#proyectos" class="font-medium transition-colors duration-200" style="color: #0A0A0A;" onmouseover="this.style.color='#003366'" onmouseout="this.style.color='#0A0A0A'">
+          Proyectos
+        </a>
+<a href="#tecnologias" class="font-medium transition-colors duration-200" style="color: #0A0A0A;" onmouseover="this.style.color='#003366'" onmouseout="this.style.color='#0A0A0A'">
+          Tecnologías
+        </a>
+<a href="#nosotros" class="font-medium transition-colors duration-200" style="color: #0A0A0A;" onmouseover="this.style.color='#003366'" onmouseout="this.style.color='#0A0A0A'">
+          Nosotros
+        </a>
+<a href="#contacto" class="px-6 py-2.5 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-md hover:shadow-lg" style="background-color: #003366; color: #FFFFFF;" onmouseover="this.style.backgroundColor='#336699'" onmouseout="this.style.backgroundColor='#003366'">
+          Contacto
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        id="mobile-menu-button" 
+class="md:hidden p-2 rounded-lg transition-colors duration-200" style="color: #0A0A0A;" onmouseover="this.style.backgroundColor='#DDE3EA'; this.style.color='#003366'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#0A0A0A'"
+        aria-label="Toggle menu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4 pt-2">
+      <div class="flex flex-col space-y-3">
+<a href="#servicios" class="font-medium py-2 px-4 rounded-lg transition-all duration-200" style="color: #0A0A0A;" onmouseover="this.style.backgroundColor='#DDE3EA'; this.style.color='#003366'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#0A0A0A'">
+          Servicios
+        </a>
+<a href="#proyectos" class="font-medium py-2 px-4 rounded-lg transition-all duration-200" style="color: #0A0A0A;" onmouseover="this.style.backgroundColor='#DDE3EA'; this.style.color='#003366'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#0A0A0A'">
+          Proyectos
+        </a>
+<a href="#tecnologias" class="font-medium py-2 px-4 rounded-lg transition-all duration-200" style="color: #0A0A0A;" onmouseover="this.style.backgroundColor='#DDE3EA'; this.style.color='#003366'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#0A0A0A'">
+          Tecnologías
+        </a>
+<a href="#nosotros" class="font-medium py-2 px-4 rounded-lg transition-all duration-200" style="color: #0A0A0A;" onmouseover="this.style.backgroundColor='#DDE3EA'; this.style.color='#003366'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#0A0A0A'">
+          Nosotros
+        </a>
+<a href="#contacto" class="px-6 py-3 rounded-lg font-semibold text-center transition-all duration-200 shadow-md" style="background-color: #003366; color: #FFFFFF;" onmouseover="this.style.backgroundColor='#336699'" onmouseout="this.style.backgroundColor='#003366'">
+          Contacto
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking on a link
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (!mobileMenuButton?.contains(target) && !mobileMenu?.contains(target)) {
+      mobileMenu?.classList.add('hidden');
+    }
+  });
+</script>

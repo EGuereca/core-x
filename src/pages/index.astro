@@ -1,11 +1,24 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<!-- Hero Section -->
+	<div class="pt-20 min-h-screen" style="background: linear-gradient(135deg, #DDE3EA 0%, #FFFFFF 100%);">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+			<div class="text-center space-y-6">
+				<h1 class="text-5xl md:text-6xl font-bold" style="background: linear-gradient(90deg, #003366 0%, #0A0A0A 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">
+					Bienvenido a Core X
+				</h1>
+				<p class="text-xl max-w-2xl mx-auto" style="color: #0A0A0A;">
+					Transformamos ideas en soluciones digitales innovadoras
+				</p>
+				<div class="pt-8">
+					<a href="#contacto" class="px-8 py-4 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg inline-block" style="background-color: #003366; color: #FFFFFF;" onmouseover="this.style.backgroundColor='#336699'" onmouseout="this.style.backgroundColor='#003366'">
+						Comienza tu proyecto
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </Layout>

@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+/* Core X - Paleta de colores corporativa */
+:root {
+  --color-negro-profundo: #0A0A0A;
+  --color-azul-marino: #003366;
+  --color-azul-acero: #336699;
+  --color-gris-claro: #DDE3EA;
+  --color-blanco-puro: #FFFFFF;
+}
