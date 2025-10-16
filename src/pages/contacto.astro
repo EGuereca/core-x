@@ -2,3 +2,104 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 ---
+
+<div id="contacto" class="py-20 bg-gradient-to-br from-[#DDE3EA] via-white to-[#F8FAFC]">
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="text-center mb-16">
+			<h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#003366]">
+				Contáctanos
+			</h2>
+			<p class="text-lg max-w-2xl mx-auto text-[#0A0A0A]">
+				¿Listo para transformar tu idea en realidad? Escríbenos y te responderemos lo antes posible.
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-2 gap-12 items-center">
+			<!-- Lado Izquierdo -->
+			<div class="space-y-6">
+				<div class="flex items-start gap-4">
+					<div class="p-3 rounded-full bg-[#003366] text-white shadow-md">
+						<span class="material-symbols-outlined text-3xl">mail</span>
+					</div>
+					<div>
+						<h3 class="font-semibold text-lg text-[#003366]">Correo Electrónico</h3>
+						<p class="text-[#0A0A0A]">contacto@tuempresa.com</p>
+					</div>
+				</div>
+
+				<div class="flex items-start gap-4">
+					<div class="p-3 rounded-full bg-[#003366] text-white shadow-md">
+						<span class="material-symbols-outlined text-3xl">call</span>
+					</div>
+					<div>
+						<h3 class="font-semibold text-lg text-[#003366]">Teléfono</h3>
+						<p class="text-[#0A0A0A]">+52 55 1234 5678</p>
+					</div>
+				</div>
+
+				<div class="flex items-start gap-4">
+					<div class="p-3 rounded-full bg-[#003366] text-white shadow-md">
+						<span class="material-symbols-outlined text-3xl">location_on</span>
+					</div>
+					<div>
+						<h3 class="font-semibold text-lg text-[#003366]">Ubicación</h3>
+						<p class="text-[#0A0A0A]">Ciudad de México, México</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Formulario -->
+			<form
+				class="bg-white p-8 rounded-2xl shadow-2xl border border-[#DDE3EA] transform hover:scale-[1.01] transition-all duration-300"
+				action="#"
+				method="POST"
+			>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<div>
+						<label for="nombre" class="block text-sm font-semibold text-[#003366] mb-2">Nombre</label>
+						<input
+							type="text"
+							id="nombre"
+							name="nombre"
+							required
+							class="w-full px-4 py-3 rounded-lg border border-[#DDE3EA] focus:ring-2 focus:ring-[#003366] focus:border-[#003366] transition-all outline-none"
+							placeholder="Tu nombre completo"
+						/>
+					</div>
+					<div>
+						<label for="email" class="block text-sm font-semibold text-[#003366] mb-2">Correo electrónico</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							required
+							class="w-full px-4 py-3 rounded-lg border border-[#DDE3EA] focus:ring-2 focus:ring-[#003366] focus:border-[#003366] transition-all outline-none"
+							placeholder="ejemplo@correo.com"
+						/>
+					</div>
+				</div>
+
+				<div class="mt-6">
+					<label for="mensaje" class="block text-sm font-semibold text-[#003366] mb-2">Mensaje</label>
+					<textarea
+						id="mensaje"
+						name="mensaje"
+						rows="5"
+						required
+						class="w-full px-4 py-3 rounded-lg border border-[#DDE3EA] focus:ring-2 focus:ring-[#003366] focus:border-[#003366] transition-all outline-none"
+						placeholder="Escribe tu mensaje aquí..."
+					></textarea>
+				</div>
+
+				<div class="mt-8 text-center">
+					<button
+						type="submit"
+						class="bg-[#003366] text-white px-8 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 hover:bg-[#336699] transition-all duration-300"
+					>
+						Enviar Mensaje
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
