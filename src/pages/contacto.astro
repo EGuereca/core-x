@@ -3,57 +3,80 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<div id="contacto" class="py-20 bg-gradient-to-br from-[#DDE3EA] via-white to-[#F8FAFC]">
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
-			<h2 class="text-4xl md:text-5xl font-bold mb-4 text-[#003366]">
-				Contáctanos
+<div id="contacto" class="relative py-24 bg-gradient-to-br from-[#FFFFFF] via-[#DDE3EA] to-[#BFC8D8] overflow-hidden">
+	<!-- Decoración de fondo -->
+	<div class="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
+	<div class="absolute top-0 right-0 w-80 h-80 bg-[#003366]/20 rounded-full blur-3xl"></div>
+	<div class="absolute bottom-0 left-0 w-96 h-96 bg-[#336699]/20 rounded-full blur-3xl"></div>
+
+	<div class="container relative mx-auto px-4 sm:px-6 lg:px-8">
+		<!-- Título -->
+		<div class="text-center mb-20">
+			<h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-[#003366] tracking-tight">
+				Conecta con Nuestro Equipo
 			</h2>
-			<p class="text-lg max-w-2xl mx-auto text-[#0A0A0A]">
-				¿Listo para transformar tu idea en realidad? Escríbenos y te responderemos lo antes posible.
+			<p class="text-lg md:text-xl text-[#0A0A0A]/80 max-w-2xl mx-auto">
+				Estamos listos para ayudarte a construir soluciones digitales innovadoras, seguras y escalables.  
+				Cuéntanos sobre tu idea o proyecto y te responderemos en menos de 24 horas.
 			</p>
 		</div>
 
-		<div class="grid md:grid-cols-2 gap-12 items-center">
-			<!-- Lado Izquierdo -->
-			<div class="space-y-6">
-				<div class="flex items-start gap-4">
-					<div class="p-3 rounded-full bg-[#003366] text-white shadow-md">
-						<span class="material-symbols-outlined text-3xl">mail</span>
-					</div>
-					<div>
-						<h3 class="font-semibold text-lg text-[#003366]">Correo Electrónico</h3>
-						<p class="text-[#0A0A0A]">contacto@tuempresa.com</p>
-					</div>
+		<div class="grid lg:grid-cols-2 gap-12 items-center">
+			<!-- Información de contacto -->
+			<div class="space-y-8">
+				<div class="p-8 rounded-2xl bg-white/70 shadow-lg backdrop-blur-lg border border-[#DDE3EA]/60 hover:shadow-xl transition-all duration-300">
+					<h3 class="text-2xl font-semibold mb-4 text-[#003366] flex items-center gap-2">
+						<span class="material-symbols-outlined text-4xl text-[#003366]">handshake</span>
+						¿Por qué colaborar con nosotros?
+					</h3>
+					<ul class="space-y-3 text-[#0A0A0A]/90">
+						<li class="flex items-start gap-3">
+							<span class="material-symbols-outlined text-[#336699]">verified</span>
+							Desarrolladores expertos en software empresarial y soluciones a medida.
+						</li>
+						<li class="flex items-start gap-3">
+							<span class="material-symbols-outlined text-[#336699]">bolt</span>
+							Integraciones modernas con IA, cloud y sistemas escalables.
+						</li>
+						<li class="flex items-start gap-3">
+							<span class="material-symbols-outlined text-[#336699]">schedule</span>
+							Metodología ágil: entregas continuas, comunicación transparente.
+						</li>
+					</ul>
 				</div>
 
-				<div class="flex items-start gap-4">
-					<div class="p-3 rounded-full bg-[#003366] text-white shadow-md">
-						<span class="material-symbols-outlined text-3xl">call</span>
+				<!-- Detalles de contacto -->
+				<div class="grid sm:grid-cols-2 gap-6 mt-8">
+					<div class="flex items-center gap-4 p-5 bg-white/70 rounded-xl shadow-md border border-[#DDE3EA]/70 hover:scale-105 transition-transform">
+						<div class="p-3 bg-[#003366] text-white rounded-full">
+							<span class="material-symbols-outlined text-2xl">mail</span>
+						</div>
+						<div>
+							<p class="text-sm text-[#0A0A0A]/70">Correo</p>
+							<p class="font-semibold text-[#003366]">contacto@tuempresa.com</p>
+						</div>
 					</div>
-					<div>
-						<h3 class="font-semibold text-lg text-[#003366]">Teléfono</h3>
-						<p class="text-[#0A0A0A]">+52 55 1234 5678</p>
-					</div>
-				</div>
 
-				<div class="flex items-start gap-4">
-					<div class="p-3 rounded-full bg-[#003366] text-white shadow-md">
-						<span class="material-symbols-outlined text-3xl">location_on</span>
-					</div>
-					<div>
-						<h3 class="font-semibold text-lg text-[#003366]">Ubicación</h3>
-						<p class="text-[#0A0A0A]">Ciudad de México, México</p>
+					<div class="flex items-center gap-4 p-5 bg-white/70 rounded-xl shadow-md border border-[#DDE3EA]/70 hover:scale-105 transition-transform">
+						<div class="p-3 bg-[#003366] text-white rounded-full">
+							<span class="material-symbols-outlined text-2xl">call</span>
+						</div>
+						<div>
+							<p class="text-sm text-[#0A0A0A]/70">Teléfono</p>
+							<p class="font-semibold text-[#003366]">+52 55 1234 5678</p>
+						</div>
 					</div>
 				</div>
 			</div>
 
 			<!-- Formulario -->
 			<form
-				class="bg-white p-8 rounded-2xl shadow-2xl border border-[#DDE3EA] transform hover:scale-[1.01] transition-all duration-300"
+				class="bg-white/80 backdrop-blur-md border border-[#DDE3EA]/60 shadow-2xl p-10 rounded-2xl transform hover:scale-[1.01] transition-all duration-300"
 				action="#"
 				method="POST"
 			>
+				<h3 class="text-2xl font-bold mb-6 text-[#003366]">Envíanos un mensaje</h3>
+
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 					<div>
 						<label for="nombre" class="block text-sm font-semibold text-[#003366] mb-2">Nombre</label>
@@ -62,10 +85,11 @@ import Layout from "../layouts/Layout.astro";
 							id="nombre"
 							name="nombre"
 							required
-							class="w-full px-4 py-3 rounded-lg border border-[#DDE3EA] focus:ring-2 focus:ring-[#003366] focus:border-[#003366] transition-all outline-none"
+							class="w-full px-4 py-3 rounded-lg border border-[#DDE3EA] focus:ring-2 focus:ring-[#003366] focus:border-[#003366] outline-none transition-all"
 							placeholder="Tu nombre completo"
 						/>
 					</div>
+
 					<div>
 						<label for="email" class="block text-sm font-semibold text-[#003366] mb-2">Correo electrónico</label>
 						<input
@@ -73,7 +97,7 @@ import Layout from "../layouts/Layout.astro";
 							id="email"
 							name="email"
 							required
-							class="w-full px-4 py-3 rounded-lg border border-[#DDE3EA] focus:ring-2 focus:ring-[#003366] focus:border-[#003366] transition-all outline-none"
+							class="w-full px-4 py-3 rounded-lg border border-[#DDE3EA] focus:ring-2 focus:ring-[#003366] focus:border-[#003366] outline-none transition-all"
 							placeholder="ejemplo@correo.com"
 						/>
 					</div>
@@ -86,19 +110,23 @@ import Layout from "../layouts/Layout.astro";
 						name="mensaje"
 						rows="5"
 						required
-						class="w-full px-4 py-3 rounded-lg border border-[#DDE3EA] focus:ring-2 focus:ring-[#003366] focus:border-[#003366] transition-all outline-none"
-						placeholder="Escribe tu mensaje aquí..."
+						class="w-full px-4 py-3 rounded-lg border border-[#DDE3EA] focus:ring-2 focus:ring-[#003366] focus:border-[#003366] outline-none transition-all resize-none"
+						placeholder="Cuéntanos sobre tu proyecto o requerimiento..."
 					></textarea>
 				</div>
 
 				<div class="mt-8 text-center">
 					<button
 						type="submit"
-						class="bg-[#003366] text-white px-8 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 hover:bg-[#336699] transition-all duration-300"
+						class="bg-[#003366] text-white px-10 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 hover:bg-[#336699] transition-all duration-300"
 					>
 						Enviar Mensaje
 					</button>
 				</div>
+
+				<p class="mt-4 text-sm text-[#0A0A0A]/60 text-center">
+					Nos comprometemos a proteger tu información y responder en menos de 24 horas hábiles.
+				</p>
 			</form>
 		</div>
 	</div>
