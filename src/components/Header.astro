@@ -5,17 +5,14 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-sm border-b shadow-sm" style="border-color: #DDE3EA;">
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
-      <!-- Logo -->
-      <div class="flex items-center">
-        <a href="/" class="flex items-center space-x-2 group">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-all duration-200" style="background: linear-gradient(135deg, #003366 0%, #0A0A0A 100%);">
-            <span class="font-bold text-xl" style="color: #FFFFFF;">CX</span>
-          </div>
-          <span class="text-2xl font-bold" style="background: linear-gradient(90deg, #003366 0%, #0A0A0A 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">
-            Core X
-          </span>
-        </a>
-      </div>
+<div class="flex items-center">
+  <a href="/" class="flex items-center group">
+    <!-- Isotipo solo en móvil -->
+    <img src="/LogoP.png" alt="Isotipo Core-X" class="w-17 h-14 rounded-lg transform group-hover:scale-105 transition-all duration-200 md:hidden" />
+    <!-- Logotipo solo en escritorio/tablet -->
+    <img src="/LogoS.png" alt="Logotipo Core-X" class="h-40 w-auto hidden md:inline-block" />
+  </a>
+</div>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:flex items-center space-x-8">
