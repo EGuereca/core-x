@@ -44,73 +44,116 @@ import Layout from '../layouts/Layout.astro';
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 				<!-- Servicio 1 -->
 				<div class="p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" style="background-color: #F8F9FA; border-left: 4px solid #003366;">
-					<div class="text-4xl mb-4">🌐</div>
+					<div class="text-4xl mb-4" style="color: #003366;">
+						<span class="material-symbols-outlined !text-5xl">language</span>
+					</div>
 					<h3 class="text-2xl font-bold mb-3" style="color: #003366;">Desarrollo Web</h3>
 					<p style="color: #0A0A0A;">Aplicaciones web modernas, responsivas y de alto rendimiento utilizando las últimas tecnologías.</p>
 					<ul class="mt-4 space-y-2" style="color: #003366;">
-						<li>✓ React, Vue, Angular</li>
-						<li>✓ Node.js, Python, PHP</li>
-						<li>✓ Progressive Web Apps</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> React, Vue, Angular
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Node.js, Python, PHP
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Progressive Web Apps
+						</li>
 					</ul>
 				</div>
 
-				<!-- Servicio 2 -->
 				<div class="p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" style="background-color: #F8F9FA; border-left: 4px solid #003366;">
-					<div class="text-4xl mb-4">📱</div>
+					<div class="text-4xl mb-4" style="color: #003366;">
+						<span class="material-symbols-outlined !text-5xl">smartphone</span>
+					</div>
 					<h3 class="text-2xl font-bold mb-3" style="color: #003366;">Apps Móviles</h3>
 					<p style="color: #0A0A0A;">Desarrollo de aplicaciones móviles nativas e híbridas para iOS y Android.</p>
 					<ul class="mt-4 space-y-2" style="color: #003366;">
-						<li>✓ React Native, Flutter</li>
-						<li>✓ iOS & Android nativo</li>
-						<li>✓ Diseño UX/UI optimizado</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> React Native, Flutter
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> iOS & Android nativo
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Diseño UX/UI optimizado
+						</li>
 					</ul>
 				</div>
 
-				<!-- Servicio 3 -->
 				<div class="p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" style="background-color: #F8F9FA; border-left: 4px solid #003366;">
-					<div class="text-4xl mb-4">☁️</div>
+					<div class="text-4xl mb-4" style="color: #003366;">
+						<span class="material-symbols-outlined !text-5xl">cloud</span>
+					</div>
 					<h3 class="text-2xl font-bold mb-3" style="color: #003366;">Cloud & DevOps</h3>
 					<p style="color: #0A0A0A;">Infraestructura en la nube, CI/CD y automatización de procesos de desarrollo.</p>
 					<ul class="mt-4 space-y-2" style="color: #003366;">
-						<li>✓ AWS, Azure, Google Cloud</li>
-						<li>✓ Docker, Kubernetes</li>
-						<li>✓ CI/CD Pipelines</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> AWS, Azure, Google Cloud
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Docker, Kubernetes
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> CI/CD Pipelines
+						</li>
 					</ul>
 				</div>
 
-				<!-- Servicio 4 -->
 				<div class="p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" style="background-color: #F8F9FA; border-left: 4px solid #003366;">
-					<div class="text-4xl mb-4">🔧</div>
+					<div class="text-4xl mb-4" style="color: #003366;">
+						<span class="material-symbols-outlined !text-5xl">hub</span>
+					</div>
 					<h3 class="text-2xl font-bold mb-3" style="color: #003366;">APIs & Backend</h3>
 					<p style="color: #0A0A0A;">Desarrollo de APIs RESTful y GraphQL robustas y escalables.</p>
 					<ul class="mt-4 space-y-2" style="color: #003366;">
-						<li>✓ Microservicios</li>
-						<li>✓ Bases de datos SQL/NoSQL</li>
-						<li>✓ Arquitecturas escalables</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Microservicios
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Bases de datos SQL/NoSQL
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Arquitecturas escalables
+						</li>
 					</ul>
 				</div>
 
-				<!-- Servicio 5 -->
 				<div class="p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" style="background-color: #F8F9FA; border-left: 4px solid #003366;">
-					<div class="text-4xl mb-4">🤖</div>
+					<div class="text-4xl mb-4" style="color: #003366;">
+						<span class="material-symbols-outlined !text-5xl">smart_toy</span>
+					</div>
 					<h3 class="text-2xl font-bold mb-3" style="color: #003366;">IA & Machine Learning</h3>
 					<p style="color: #0A0A0A;">Integración de inteligencia artificial y modelos de machine learning en tus aplicaciones.</p>
 					<ul class="mt-4 space-y-2" style="color: #003366;">
-						<li>✓ Modelos predictivos</li>
-						<li>✓ Procesamiento de lenguaje</li>
-						<li>✓ Visión por computadora</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Modelos predictivos
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Procesamiento de lenguaje
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Visión por computadora
+						</li>
 					</ul>
 				</div>
 
-				<!-- Servicio 6 -->
 				<div class="p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" style="background-color: #F8F9FA; border-left: 4px solid #003366;">
-					<div class="text-4xl mb-4">🔒</div>
+					<div class="text-4xl mb-4" style="color: #003366;">
+						<span class="material-symbols-outlined !text-5xl">security</span>
+					</div>
 					<h3 class="text-2xl font-bold mb-3" style="color: #003366;">Seguridad & Testing</h3>
 					<p style="color: #0A0A0A;">Auditorías de seguridad, testing automatizado y aseguramiento de calidad.</p>
 					<ul class="mt-4 space-y-2" style="color: #003366;">
-						<li>✓ Pruebas automatizadas</li>
-						<li>✓ Auditorías de seguridad</li>
-						<li>✓ Code reviews</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Pruebas automatizadas
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Auditorías de seguridad
+						</li>
+						<li class="flex items-center gap-2">
+							<span class="material-symbols-outlined">task_alt</span> Code reviews
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -131,51 +174,51 @@ import Layout from '../layouts/Layout.astro';
 			
 			<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">⚛️</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">atom</span>
 					<p class="font-semibold" style="color: #FFFFFF;">React</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">🟢</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">hub</span>
 					<p class="font-semibold" style="color: #FFFFFF;">Node.js</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">🐍</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">code</span>
 					<p class="font-semibold" style="color: #FFFFFF;">Python</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">🔷</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">data_object</span>
 					<p class="font-semibold" style="color: #FFFFFF;">TypeScript</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">🐳</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">deployed_code</span>
 					<p class="font-semibold" style="color: #FFFFFF;">Docker</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">☁️</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">cloud</span>
 					<p class="font-semibold" style="color: #FFFFFF;">AWS</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">🎨</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">palette</span>
 					<p class="font-semibold" style="color: #FFFFFF;">Tailwind</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">📊</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">database</span>
 					<p class="font-semibold" style="color: #FFFFFF;">PostgreSQL</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">🍃</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">database</span>
 					<p class="font-semibold" style="color: #FFFFFF;">MongoDB</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">🚀</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">rocket_launch</span>
 					<p class="font-semibold" style="color: #FFFFFF;">Next.js</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">🔺</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">share</span>
 					<p class="font-semibold" style="color: #FFFFFF;">GraphQL</p>
 				</div>
 				<div class="p-6 rounded-lg text-center transform hover:scale-110 transition-all duration-200" style="background-color: rgba(255, 255, 255, 0.1);">
-					<div class="text-3xl mb-2">⚡</div>
+					<span class="material-symbols-outlined text-3xl mb-2" style="color: #FFFFFF;">bolt</span>
 					<p class="font-semibold" style="color: #FFFFFF;">Astro</p>
 				</div>
 			</div>
