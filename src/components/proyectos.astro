@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import Layout from "../layouts/Layout.astro";
+import {Image} from 'astro:assets';
+import Karina from '../assets/Logokarina.png';
 ---
 
 <div id="proyectos" class="py-20" style="background-color: #FFFFFF;">
@@ -18,7 +19,7 @@ import Layout from "../layouts/Layout.astro";
 			<!-- Proyecto 1 -->
 			<a href="https://karinaibarra.beauty" target="_blank" rel="noopener noreferrer" class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white basis-full md:basis-1/2 lg:basis-1/3 group">
     			<!-- Imagen del proyecto dentro de la card -->
-    			<img src="/Logokarina.png" alt="Karina IV MAKEUP" class="w-full h-44 object-cover" />
+    			<Image src={Karina} alt="Karina IV MAKEUP" class="w-full h-44 object-cover" />
 				<div class="p-6">
 					<!-- Idea breve del proyecto -->
 					<p class="text-xs uppercase tracking-wide mb-2" style="color:#003366; opacity:.8">Sitio y reservaciones para estética</p>

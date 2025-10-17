@@ -1,6 +1,8 @@
 ---
 // Footer component for Core X
 const currentYear = new Date().getFullYear();
+import { Image } from 'astro:assets';
+import Logo from '../../public/LogoP.png';
 ---
 
 <footer class="text-white" style="background: linear-gradient(135deg, #0A0A0A 0%, #003366 50%, #0A0A0A 100%);">
@@ -12,7 +14,7 @@ const currentYear = new Date().getFullYear();
       <div class="space-y-4">
         <div class="flex items-center space-x-2">
           <!-- Isotipo y Logotipo -->
-          <img src="/LogoP.png" alt="Isotipo Core-X" class="w-10 h-10 rounded-lg drop-shadow-lg bg-white" />
+          <Image src={Logo} alt="Isotipo Core-X" class="w-10 h-10 rounded-lg drop-shadow-lg bg-white" loading="lazy"/>
         </div>
         <p class="text-sm leading-relaxed" style="color: #DDE3EA;">
           Transformamos ideas en soluciones digitales innovadoras. Desarrollo de software de alta calidad para impulsar tu negocio.
