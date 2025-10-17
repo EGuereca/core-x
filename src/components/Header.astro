@@ -1,5 +1,7 @@
 ---
-// Header component for Core X
+import { Image } from 'astro:assets';
+import Logo from '../../public/LogoP.png';
+import LogoS from '../../public/LogoS.png';
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-sm border-b shadow-sm" style="border-color: #DDE3EA;">
@@ -8,9 +10,9 @@
 <div class="flex items-center">
   <a href="/" class="flex items-center group">
     <!-- Isotipo solo en móvil -->
-    <img src="/LogoP.png" alt="Isotipo Core-X" class="w-17 h-14 rounded-lg transform group-hover:scale-105 transition-all duration-200 md:hidden" />
+    <Image src={Logo} alt="Isotipo Core-X" class="w-17 h-14 rounded-lg transform group-hover:scale-105 transition-all duration-200 md:hidden" loading="eager"/>
     <!-- Logotipo solo en escritorio/tablet -->
-    <img src="/LogoS.png" alt="Logotipo Core-X" class="h-40 w-auto hidden md:inline-block" />
+    <Image src={LogoS} alt="Logotipo Core-X" class="h-40 w-auto hidden md:inline-block" loading="eager"/>
   </a>
 </div>
 
