@@ -1,29 +1,38 @@
 ---
 import "../styles/global.css";
 ---
-<div class="pt-20 min-h-screen" style="background: linear-gradient(135deg, #DDE3EA 0%, #FFFFFF 100%);">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="text-center space-y-6">
-            <!-- Logo principal con envoltorio estético -->
-            <div class="flex items-center justify-center mb-8">
-                <div class="bg-white/90 p-8 md:p-12 lg:p-16 shadow-2xl ring-1 ring-gray-200" style="border-radius: 9999px 0 0 9999px;">
-                    <img src="/LogoA.png" alt="Core-X Logo" class="h-32 md:h-48 lg:h-64 w-auto max-w-full object-contain" />
+<!-- Banner Hero Enorme -->
+<div class="relative w-full h-screen min-h-[600px] overflow-hidden">
+    <!-- Imagen de Banner -->
+    <div class="absolute inset-0">
+        <img 
+            src="/bannerCoreX.JPEG" 
+            alt="Core-X Banner" 
+            class="w-full h-full object-cover"
+        />
+        <!-- Overlay oscuro para mejorar legibilidad del texto -->
+        <div class="absolute inset-0 bg-black/30"></div>
+    </div>
+    
+    <!-- Contenido sobre el banner -->
+    <div class="relative z-10 h-full flex items-center justify-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-6">
+                <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-2xl">
+                    Construimos Software<br/>que Impulsa tu Negocio
+                </h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto text-white drop-shadow-lg">
+                    Soluciones tecnológicas escalables y de alto rendimiento.<br/>
+                    <span class="text-lg">Desde aplicaciones web hasta sistemas empresariales complejos.</span>
+                </p>
+                <div class="pt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#servicios" class="px-8 py-4 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg inline-block" style="background-color: #003366; color: #FFFFFF;" onmouseover="this.style.backgroundColor='#336699'" onmouseout="this.style.backgroundColor='#003366'">
+                        Ver Servicios
+                    </a>
+                    <a href="#tecnologias" class="px-8 py-4 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg inline-block" style="background-color: #FFFFFF; color: #003366; border: 2px solid #003366;" onmouseover="this.style.backgroundColor='#F5F5F5'" onmouseout="this.style.backgroundColor='#FFFFFF'">
+                        Tecnologías
+                    </a>
                 </div>
-            </div>
-            <h1 class="text-5xl md:text-7xl font-bold" style="background: linear-gradient(90deg, #003366 0%, #0A0A0A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1.2; padding-bottom: 0.2em;">
-                Construimos Software<br/>que Impulsa tu Negocio
-            </h1>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto" style="color: #0A0A0A;">
-                Soluciones tecnológicas escalables y de alto rendimiento.<br/>
-                <span class="text-lg" style="color: #003366;">Desde aplicaciones web hasta sistemas empresariales complejos.</span>
-            </p>
-            <div class="pt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#servicios" class="px-8 py-4 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg inline-block" style="background-color: #003366; color: #FFFFFF;" onmouseover="this.style.backgroundColor='#336699'" onmouseout="this.style.backgroundColor='#003366'">
-                    Ver Servicios
-                </a>
-                <a href="#tecnologias" class="px-8 py-4 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg inline-block" style="background-color: #FFFFFF; color: #003366; border: 2px solid #003366;" onmouseover="this.style.backgroundColor='#F5F5F5'" onmouseout="this.style.backgroundColor='#FFFFFF'">
-                    Tecnologías
-                </a>
             </div>
         </div>
     </div>
