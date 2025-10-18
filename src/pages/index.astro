@@ -6,9 +6,14 @@ import Tecnologias from '../components/Tecnologias.astro';
 import Proyectos from '../components/proyectos.astro';
 import RedesSociales from '../components/RedesSociales.astro';
 import Contacto from '../components/Contacto.astro';
+
+const title = "Desarrollo de Software en Torreón | Core-X"
+const description = "Somos una empresa de desarrollo de software en Torreón, especializada en soluciones web, móviles y sistemas empresariales. Cotiza tu proyecto hoy."
+const canonical = "https://core-x.lat/"
+const image = "../../public/LogoP.png"
 ---
 
-<Layout>
+<Layout title={title} description={description} canonical={canonical} image={image}>
 	<Hero />
 	<Servicios />
 	<Tecnologias />
