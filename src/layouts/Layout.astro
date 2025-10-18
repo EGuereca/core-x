@@ -6,11 +6,15 @@ import Footer from '../components/Footer.astro';
 const { title, description, canonical, image } = Astro.props;
 const localBusiness = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Core X",
+  "@type": "SoftwareCompany",
+  "name": "Core-X",
+  "legalName": "Core-X Software Development",
   "image": "https://core-x.lat/LogoP.png",
+  "logo": "https://core-x.lat/LogoP.png",
   "url": "https://core-x.lat",
   "email": "contacto@core-x.lat",
+  "telephone": "+52 (871) 000-0000",
+  "description": "Empresa líder en desarrollo de software en Torreón, especializada en soluciones web, móviles y sistemas empresariales personalizados.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Av Allende 333 Poniente, Primero de Cobián Centro, 27000 Torreón, Coah.",
@@ -19,18 +23,64 @@ const localBusiness = {
     "postalCode": "27000",
     "addressCountry": "MX"
   },
-  "priceRange": "$",
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 25.542844,
+      "longitude": -103.406786
+    },
+    "geoRadius": "50000"
+  },
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 25.542844,
     "longitude": -103.406786
   },
-  "openingHours": "Mo-Fr 09:00-18:00",
+  "priceRange": "$$$",
+  "openingHours": "Mo-Fr 07:00-18:00",
   "sameAs": [
-    "https://www.facebook.com/tunegocio",
-    "https://www.instagram.com/tunegocio",
-    "https://www.linkedin.com/company/tunegocio"
-  ]
+    "https://www.facebook.com/61582423080698",
+    "https://www.instagram.com/core.x.soft/"
+  ],
+  "keywords": "desarrollo software, desarrollo web, aplicaciones móviles, sistemas empresariales, software personalizado, desarrollo torreón, tecnología coahuila",
+  "knowsAbout": [
+    "Desarrollo Web",
+    "Desarrollo de Aplicaciones Móviles",
+    "Sistemas Empresariales",
+    "Consultoría IT",
+    "Software a Medida"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Desarrollo",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Desarrollo Web",
+          "description": "Creación de sitios y aplicaciones web personalizadas"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Desarrollo Móvil",
+          "description": "Desarrollo de aplicaciones móviles para iOS y Android"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Software Empresarial",
+          "description": "Sistemas empresariales y soluciones de software a medida"
+        }
+      }
+    ]
+  }
 };
 ---
 
@@ -42,12 +92,22 @@ const localBusiness = {
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta name="keywords" content="desarrollo software torreón, desarrollo web torreón, desarrollo de aplicaciones, empresa tecnología coahuila, desarrollo móvil torreón, software empresarial, desarrollo sistemas torreón, programación laguna, servicios tecnológicos torreón, software a medida coahuila" />
+		<meta name="author" content="Core-X" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		<meta name="geo.region" content="MX-COA" />
+		<meta name="geo.placename" content="Torreón" />
+		<meta name="geo.position" content="25.542844;-103.406786" />
+		<meta name="ICBM" content="25.542844, -103.406786" />
 		<link rel="canonical" href={canonical} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={image} />
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content="es_MX" />
+		<meta property="og:site_name" content="Core-X" />
+		<meta property="og:url" content={canonical} />
 		<script type="application/ld+json">{JSON.stringify(localBusiness)}</script>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
