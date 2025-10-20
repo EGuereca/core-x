@@ -8,3 +8,17 @@
   --color-gris-claro: #DDE3EA;
   --color-blanco-puro: #FFFFFF;
 }
+
+/* --- PASO 1: Definir tu fuente descargada --- */
+@font-face {
+  font-family: 'SF Pro Display'; /* Elige el nombre que quieras usar */
+  src: url('../assets/fonts/SF-Pro-Display-Medium.otf') format('opentype');
+  font-weight: 500; /* Medium corresponde a un peso de 500 */
+  font-style: normal;
+  font-display: swap; /* Importante para que el texto se muestre mientras carga la fuente */
+}
+
+/* --- PASO 2: Aplicar la fuente globalmente --- */
+body {
+  font-family: 'SF Pro Display', system-ui, sans-serif; /* Usamos el nombre que definimos */
+}
