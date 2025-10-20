@@ -28,7 +28,7 @@ import ImagenLaptop from '../assets/ImagenLaptop.png';
         </div>
       </div>
       
-      <div class="flex items-center justify-center animate-slide-in-right opacity-0" style="animation-delay: 1s;">
+      <div class="hidden lg:flex items-center justify-center animate-slide-in-right opacity-0" style="animation-delay: 1s;">
         <Image 
           src={ImagenLaptop} 
           alt="Ilustración de una laptop con código" 
@@ -84,7 +84,6 @@ import ImagenLaptop from '../assets/ImagenLaptop.png';
             setTimeout(animateText, pauseDuration);
           } else {
             dynamicSpan.style.border = 'none';
-            dynamicSpan.classList.remove('typing');
             setTimeout(() => {
                 const cursorStyle = document.createElement('style');
                 cursorStyle.innerHTML = "#typewriter-dynamic::after { display: none; }";
