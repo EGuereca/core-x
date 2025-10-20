@@ -4,22 +4,21 @@ import ImagenLaptop from '../assets/ImagenLaptop.png';
 ---
 
 <div class="pt-20" style="background: linear-gradient(135deg, #DDE3EA 0%, #FFFFFF 100%);">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
     <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       
       <div class="text-center lg:text-left">
         
         <h1 class="text-5xl md:text-7xl font-bold mt-2 min-h-[12rem] md:min-h-[14rem] leading-tight" style="background: linear-gradient(90deg, #003366 0%, #0A0A0A 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">
-          <span id="typewriter"></span>
+          Construimos <span id="typewriter-dynamic"></span>
         </h1>
         
-        <p class="mt-4 text-xl text-gray-700 leading-relaxed animate-slide-up opacity-0" style="animation-delay: 5s;">
+        <p class="mt-4 text-xl text-gray-700 leading-relaxed animate-slide-up opacity-0" style="animation-delay: 1.2s;">
           Soluciones tecnológicas escalables y de alto rendimiento. Desde aplicaciones web hasta sistemas empresariales complejos.
         </p>
         
-        
-        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up opacity-0" style="animation-delay: 5.2s;">
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up opacity-0" style="animation-delay: 1.4s;">
           <a href="#servicios" class="px-8 py-4 rounded-lg font-semibold transform hover:scale-105 transition-all duration-200 shadow-lg" style="background-color: #003366; color: #FFFFFF;">
             Ver Servicios
           </a>
@@ -43,53 +42,70 @@ import ImagenLaptop from '../assets/ImagenLaptop.png';
 </div>
 
 <style>
-  /* ... El resto de tus estilos y script se mantienen exactamente igual ... */
-  @keyframes slide-up {
-    from { opacity: 0; transform: translateY(2rem); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes slide-in-right {
-    from { opacity: 0; transform: translateX(2rem); }
-    to { opacity: 1; transform: translateX(0); }
-  }
+  @keyframes slide-up { from { opacity: 0; transform: translateY(2rem); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes slide-in-right { from { opacity: 0; transform: translateX(2rem); } to { opacity: 1; transform: translateX(0); } }
   .animate-slide-up { animation: slide-up 0.8s ease-out forwards; }
   .animate-slide-in-right { animation: slide-in-right 0.8s ease-out forwards; }
 
-  #typewriter::after {
+  #typewriter-dynamic::after {
     content: '|';
     display: inline-block;
     animation: blink 0.7s infinite;
-    color: #003366;
+    background: none;
+    color: #0A0A0A;
   }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 </style>
 
 <script is:inline>
-  // ... Tu script de typewriter se mantiene igual ...
-  document.addEventListener('DOMContentLoaded', function() {
-    const typewriterElement = document.getElementById('typewriter');
-    const textToType = "Construimos Software que Impulsa tu Negocio";
-    let index = 0;
+  document.addEventListener('DOMContentLoaded', () => {
+    const dynamicSpan = document.getElementById('typewriter-dynamic');
+    const words = ["Sistemas", "Soluciones", "Sueños", "el Futuro", "Software que Impulsa tu Negocio"];
+    
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isErasing = false;
+    const typingSpeed = 120;
+    const erasingSpeed = 70;
+    const pauseDuration = 1500;
 
-    function type() {
-      if (index < textToType.length) {
-        typewriterElement.textContent += textToType.charAt(index);
-        index++;
-        setTimeout(type, 80);
-      } else {
-        setTimeout(() => {
-          if (typewriterElement) {
-            typewriterElement.style.border = 'none';
-            const cursor = typewriterElement.querySelector('::after');
-            if(cursor) cursor.style.display = 'none';
+    function animateText() {
+      const currentWord = words[wordIndex];
+      const part = currentWord.substring(0, charIndex);
+      dynamicSpan.textContent = part;
+
+      if (!isErasing) {
+        if (charIndex < currentWord.length) {
+          charIndex++;
+          setTimeout(animateText, typingSpeed);
+        } else {
+          if (wordIndex < words.length - 1) {
+            isErasing = true;
+            setTimeout(animateText, pauseDuration);
+          } else {
+            dynamicSpan.style.border = 'none';
+            dynamicSpan.classList.remove('typing');
+            setTimeout(() => {
+                const cursorStyle = document.createElement('style');
+                cursorStyle.innerHTML = "#typewriter-dynamic::after { display: none; }";
+                document.head.appendChild(cursorStyle);
+            }, 800);
           }
-        }, 800);
+        }
+      } else {
+        if (charIndex > 0) {
+          charIndex--;
+          setTimeout(animateText, erasingSpeed);
+        } else {
+          isErasing = false;
+          wordIndex++;
+          if (wordIndex >= words.length) {
+             wordIndex = 0;
+          }
+          setTimeout(animateText, typingSpeed);
+        }
       }
     }
-    setTimeout(type, 800);
+    setTimeout(animateText, 800);
   });
 </script>
