@@ -1,3 +1,9 @@
+---
+import { Image } from 'astro:assets';
+import ImagenEquipo from '../assets/LogoP.png';
+---
+
+
 <!-- Sección: Nosotros -->
 <section id="nosotros" class="relative overflow-hidden bg-white py-24">
   
@@ -27,13 +33,13 @@
           
           <!-- Imagen principal con efecto -->
           <div class="relative overflow-hidden rounded-2xl shadow-2xl transform hover:shadow-[0_20px_60px_rgba(0,51,102,0.3)] transition-all duration-500">
-            <img 
-              src="/public/LogoP.png" 
+            <!-- <img 
+              src="../ass" 
               alt="Equipo de desarrollo Core-X" 
               class="w-full h-auto relative z-10"
               loading="lazy"
-            />
-            
+            /> -->
+            <Image src={ImagenEquipo} alt="A description of my image." />
             <!-- Overlay con gradiente -->
             <div class="absolute inset-0 bg-gradient-to-tr from-[#003366]/10 via-transparent to-blue-500/5"></div>
           </div>
