@@ -1,6 +1,9 @@
 ---
 import "../styles/global.css";
+import { Resend } from "resend";
+const resend = new Resend('re_fsBJUjo1_5zTtfJyTv9drzDbN1dNnNFs2');
 ---
+
 
 <div id="contacto" class="relative py-24 bg-gradient-to-br from-[#FFFFFF] via-[#DDE3EA] to-[#BFC8D8] overflow-hidden">
 	<!-- Decoración de fondo -->
@@ -130,7 +133,7 @@ import "../styles/global.css";
     </div>
 </div>
 
-<script>
+<!-- <script>
     // Seleccionamos el formulario, el botón y el mensaje de estado
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
@@ -142,6 +145,7 @@ import "../styles/global.css";
         modal.classList.add('hidden');
         modal.classList.remove('flex');
     });
+
 
     async function handleSubmit(event: SubmitEvent) {
         event.preventDefault(); // Evita que la página se recargue
@@ -191,4 +195,55 @@ import "../styles/global.css";
     }
 
     form.addEventListener("submit", handleSubmit);
+</script> -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  const modal = document.getElementById('success-modal');
+  const closeModal = document.getElementById('close-modal');
+
+  if (!form || !status || !modal || !closeModal) return; // evita errores si no existen
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const nombre = document.getElementById('nombre')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
+    const mensaje = document.getElementById('mensaje')?.value.trim();
+
+    if (!nombre || !email || !mensaje) {
+      status.textContent = "Por favor completa todos los campos.";
+      return;
+    }
+
+    status.textContent = "Enviando mensaje...";
+
+    try {
+      const res = await fetch('/api/contacto', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, email, mensaje }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        status.textContent = "Mensaje enviado correctamente.";
+        modal.classList.remove('hidden');
+        form.reset();
+      } else {
+        status.textContent = "Error al enviar el mensaje.";
+        console.error(data.error);
+      }
+    } catch (err) {
+      console.error(err);
+      status.textContent = "No se pudo conectar con el servidor.";
+    }
+  });
+
+  closeModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+});
 </script>
