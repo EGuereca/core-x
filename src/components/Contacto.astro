@@ -125,11 +125,18 @@ const resend = new Resend('re_fsBJUjo1_5zTtfJyTv9drzDbN1dNnNFs2');
 	</div>
 </div>
 
-<div id="success-modal" class="fixed inset-0 hidden items-center justify-center backdrop-blur-sm bg-white/30">
-    <div class="bg-white/80 backdrop-blur-md p-8 rounded-lg shadow-lg text-center border border-[#DDE3EA]/60">
-        <h3 class="text-2xl font-bold text-green-600 mb-4">¡Enviado!</h3>
-        <p>Tu mensaje ha sido recibido con éxito. Te contactaremos pronto.</p>
-        <button id="close-modal" class="mt-6 bg-[#003366] text-white px-6 py-2 rounded-lg hover:bg-[#336699] transition-colors duration-300">Cerrar</button>
+<div id="success-modal" class="fixed inset-0 hidden items-center justify-center backdrop-blur-md bg-black/40 z-50 transition-all duration-300">
+    <div class="bg-white/95 backdrop-blur-md p-10 rounded-2xl shadow-2xl text-center border border-[#DDE3EA]/60 max-w-md mx-4 transform transition-all duration-500 scale-95 opacity-0">
+        <div class="bg-[#003366]/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="material-symbols-outlined text-4xl text-[#003366]">mark_email_read</span>
+        </div>
+        <h3 class="text-3xl font-bold text-[#003366] mb-4">¡Mensaje Enviado!</h3>
+        <p class="text-lg text-[#0A0A0A]/80 mb-2">Tu mensaje ha sido recibido con éxito.</p>
+        <p class="text-sm text-[#0A0A0A]/60">Nos pondremos en contacto contigo en menos de 24 horas hábiles.</p>
+        <button id="close-modal" class="mt-8 bg-[#003366] text-white px-8 py-3 rounded-xl font-semibold shadow-lg transform hover:scale-105 hover:bg-[#336699] transition-all duration-300 flex items-center justify-center mx-auto gap-2">
+            <span class="material-symbols-outlined">done</span>
+            Entendido
+        </button>
     </div>
 </div>
 
@@ -198,19 +205,43 @@ const resend = new Resend('re_fsBJUjo1_5zTtfJyTv9drzDbN1dNnNFs2');
 </script> -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById('contact-form');
+  const form = document.getElementById('contact-form') as HTMLFormElement;
   const status = document.getElementById('form-status');
   const modal = document.getElementById('success-modal');
+  const modalContent = modal?.querySelector('div');
   const closeModal = document.getElementById('close-modal');
 
-  if (!form || !status || !modal || !closeModal) return; // evita errores si no existen
+  if (!form || !status || !modal || !closeModal || !modalContent) return;
+
+  const showModal = () => {
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    // Pequeño delay para la animación
+    setTimeout(() => {
+      modalContent.classList.remove('scale-95', 'opacity-0');
+      modalContent.classList.add('scale-100', 'opacity-100');
+    }, 50);
+  };
+
+  const hideModal = () => {
+    modalContent.classList.remove('scale-100', 'opacity-100');
+    modalContent.classList.add('scale-95', 'opacity-0');
+    setTimeout(() => {
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }, 300);
+  };
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const nombre = document.getElementById('nombre')?.value.trim();
-    const email = document.getElementById('email')?.value.trim();
-    const mensaje = document.getElementById('mensaje')?.value.trim();
+    const nombreInput = document.getElementById('nombre') as HTMLInputElement;
+    const emailInput = document.getElementById('email') as HTMLInputElement;
+    const mensajeInput = document.getElementById('mensaje') as HTMLTextAreaElement;
+
+    const nombre = nombreInput?.value.trim();
+    const email = emailInput?.value.trim();
+    const mensaje = mensajeInput?.value.trim();
 
     if (!nombre || !email || !mensaje) {
       status.textContent = "Por favor completa todos los campos.";
@@ -230,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (data.success) {
         status.textContent = "Mensaje enviado correctamente.";
-        modal.classList.remove('hidden');
+        showModal();
         form.reset();
       } else {
         status.textContent = "Error al enviar el mensaje.";
@@ -242,8 +273,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  closeModal.addEventListener('click', () => {
-    modal.classList.add('hidden');
+  closeModal.addEventListener('click', hideModal);
+  
+  // Cerrar modal al hacer clic fuera
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      hideModal();
+    }
+  });
+
+  // Cerrar modal con tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      hideModal();
+    }
   });
 });
 </script>
